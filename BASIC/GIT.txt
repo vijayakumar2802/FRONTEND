@@ -1,0 +1,19 @@
+GIT
+
+GIT IS A SOFTWARE ITS RUN ON YOUR LOCAL SYSTEM.
+
+GIT HUB
+
+WEBSITE _WEBAPPLICATION RUN ON YOUR CLOUD
+
+Private repo
+public repo
+
+LOCAL FILE SAVE AND TRACKING AND PROJECT DEMO ASS A SINGLE PERSON.
+
+git init
+git add .
+git commit -m "upload"
+git branch -M main
+git remote add origin "http"
+git push -u origin main
