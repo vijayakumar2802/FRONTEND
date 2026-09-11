@@ -1,20 +1,53 @@
 * {
+    background-color: blanchedalmond;
     margin: 0;
     padding: 0;
-
-
 }
-body{
+body {
     scroll-behavior: smooth;
 }
-.cards {
-    background-color: beige;
-    padding: 20px;
-    
+.parent {
+    background-color: hsl(218, 23%, 95%);
+    padding: 20px ;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
 
 }
-.cards-top > img{
-    width: 300px;
+.child {
+    background-color: hsl(0, 0%,99%);
+    padding: 10px;
+    width: 400px;
     height: 300px;
+    display: grid;
+    align-content: start;
+    gap: 20px;
+}
+.child > img {
+    width: 300px;
+    height: 400px;
 }
 
+h1 {
+    background-color: white;
+}
+
+p {
+    background-color: white;
+
+}
+.btn {
+    background-color: blue;
+    width: 100px;
+
+}
+@media (max-width:300px) {
+    .parent{
+        background-color: white;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        justify-items: center;
+    }
+    
+}
