@@ -1,0 +1,410 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #101d32, #182c3d, #203b45);
+    color: #f8fafc;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    width: 90%;
+    max-width: 1200px;
+    margin: 28px auto;
+    padding: 22px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #f8fafc;
+    border: 1px solid #dce6e9;
+    border-radius: 18px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.logo {
+    color: #142438;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #059669;
+}
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle {
+    margin-top: 8px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 55px auto;
+    padding-bottom: 35px;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.heading h1 {
+    display: inline-block;
+    padding: 15px 28px;
+
+    background: #f8fafc;
+    color: #142438;
+
+    border: 1px solid #dce6e9;
+    border-radius: 16px;
+
+    font-size: clamp(25px, 4vw, 36px);
+    font-weight: 800;
+    letter-spacing: -1px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.heading p {
+    max-width: 600px;
+    margin: 18px auto 0;
+
+    color: #bdcbd4;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* =========================
+   TASK GRID
+========================= */
+
+.task-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+/* =========================
+   TASK CARDS
+========================= */
+
+.task-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    min-width: 0;
+    min-height: 315px;
+    padding: 27px;
+
+    display: flex;
+    flex-direction: column;
+
+    text-decoration: none;
+    color: #142438;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 22px;
+
+    background: linear-gradient(145deg, #ffffff, #eaf5f1);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Decorative circle */
+
+.task-card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 145px;
+    height: 145px;
+
+    top: -75px;
+    right: -45px;
+
+    border-radius: 50%;
+    background: rgba(5, 150, 105, 0.10);
+
+    transition: transform 0.4s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-8px);
+    border-color: #a7f3d0;
+
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+}
+
+.task-card:hover::before {
+    transform: scale(1.4);
+}
+
+/* =========================
+   CARD NUMBER
+========================= */
+
+.number {
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   CARD ICON
+========================= */
+
+.icon {
+    width: 76px;
+    height: 76px;
+    margin-top: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #d1fae5;
+    border: 1px solid #a7f3d0;
+    border-radius: 20px;
+
+    font-size: 35px;
+
+    box-shadow: 0 6px 18px rgba(5, 150, 105, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.task-card:hover .icon {
+    transform: scale(1.08) rotate(-4deg);
+    background: #bbf7d0;
+}
+
+/* =========================
+   CARD TITLE
+========================= */
+
+.task-card h2 {
+    margin-top: 22px;
+
+    color: #142438;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/* =========================
+   CARD DESCRIPTION
+========================= */
+
+.task-card p {
+    margin-top: 12px;
+
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================
+   CARD FOOTER
+========================= */
+
+.bottom {
+    margin-top: auto;
+    padding-top: 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    border-top: 1px solid #dce9e5;
+}
+
+/* =========================
+   TAG
+========================= */
+
+.tag {
+    padding: 7px 12px;
+
+    background: #d1fae5;
+    color: #047857;
+
+    border: 1px solid #a7f3d0;
+    border-radius: 9px;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* =========================
+   EXPLORE LINK
+========================= */
+
+.explore {
+    color: #047857;
+    font-size: 12px;
+    font-weight: 800;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.task-card:hover .explore {
+    color: #065f46;
+    transform: translateX(4px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 35px 15px;
+    text-align: center;
+
+    color: #bdcbd4;
+    font-size: 13px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+    .header {
+        width: 92%;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .task-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+    .header {
+        width: 92%;
+        margin: 16px auto;
+        padding: 18px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .container {
+        width: 92%;
+        margin: 35px auto;
+    }
+
+    .heading {
+        margin-bottom: 30px;
+    }
+
+    .heading h1 {
+        padding: 13px 18px;
+        font-size: 24px;
+    }
+
+    .heading p {
+        font-size: 13px;
+    }
+
+    .task-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .task-card {
+        min-height: 290px;
+        padding: 24px;
+    }
+
+    .icon {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+    }
+
+    .task-card h2 {
+        font-size: 22px;
+    }
+}
+
+/* =========================
+   KEYBOARD ACCESSIBILITY
+========================= */
+
+.task-card:focus-visible,
+.logo:focus-visible {
+    outline: 3px solid #34d399;
+    outline-offset: 5px;
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}

@@ -1,0 +1,488 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fc;
+    color: #172033;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    width: 90%;
+    max-width: 1200px;
+    margin: 24px auto 55px;
+    padding: 20px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background: #ffffff;
+    border: 1px solid #e8ecf5;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 30px rgba(28, 42, 80, 0.05);
+}
+
+.header .logo {
+    color: #18213b;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+.header .logo span {
+    color: #6854e8;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container,
+main {
+    width: 88%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+/* =========================
+   MAIN HEADING
+========================= */
+
+.heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.heading > p:first-child {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-bottom: 18px;
+
+    background: #eeebff;
+    color: #6854e8;
+    border: 1px solid #ded7ff;
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.heading h1 {
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1.8px;
+    color: #172033;
+}
+
+.heading h1 span {
+    color: #6854e8;
+}
+
+.subtitle {
+    max-width: 600px;
+    margin: 16px auto 0;
+
+    color: #778198;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =========================
+   TECHNOLOGY GRID
+========================= */
+
+.tech-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* =========================
+   TECHNOLOGY CARDS
+========================= */
+
+.tech-card {
+    min-width: 0;
+    min-height: 330px;
+    padding: 26px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 22px;
+
+    text-decoration: none;
+    color: #172033;
+
+    box-shadow: 0 8px 25px rgba(31, 45, 85, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.tech-card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 170px;
+    height: 170px;
+
+    top: -85px;
+    right: -65px;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.38);
+
+    transition: transform 0.4s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 40px rgba(31, 45, 85, 0.12);
+    border-color: #ffffff;
+}
+
+.tech-card:hover::before {
+    transform: scale(1.5);
+}
+
+/* =========================
+   CARD TOP
+========================= */
+
+.card-top {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card-top > span:first-child {
+    color: #59657b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.arrow {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+
+    color: #5140c8;
+    font-size: 20px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.tech-card:hover .arrow {
+    background: #5140c8;
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+/* =========================
+   TECHNOLOGY LOGOS
+========================= */
+
+.logo {
+    width: 82px;
+    height: 82px;
+    margin: 25px 0 20px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+
+    box-shadow: 0 6px 18px rgba(31, 45, 85, 0.06);
+
+    transition: transform 0.3s ease;
+}
+
+.logo i {
+    font-size: 46px;
+}
+
+.tech-card:hover .logo {
+    transform: scale(1.07) rotate(-3deg);
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.tech-card h2 {
+    margin-bottom: 9px;
+
+    color: #172033;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+}
+
+.tech-card > p {
+    margin-bottom: 22px;
+
+    color: #59657b;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.9;
+}
+
+/* =========================
+   CARD FOOTER
+========================= */
+
+.card-bottom {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.tag {
+    padding: 7px 12px;
+
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.75);
+
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.view {
+    color: #35415b;
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* =========================
+   DIFFERENT CARD COLORS
+========================= */
+
+/* HTML - Coral */
+.html {
+    background: linear-gradient(140deg, #ffe3d8, #fff1e9);
+}
+
+.html .logo i {
+    color: #e65335;
+}
+
+.html .tag {
+    color: #c7432b;
+}
+
+/* CSS - Blue */
+.css {
+    background: linear-gradient(140deg, #dceaff, #edf5ff);
+}
+
+.css .logo i {
+    color: #2468d9;
+}
+
+.css .tag {
+    color: #2057ad;
+}
+
+/* Bootstrap - Violet */
+.bootstrap {
+    background: linear-gradient(140deg, #eadfff, #f5efff);
+}
+
+.bootstrap .logo i {
+    color: #7952c8;
+}
+
+.bootstrap .tag {
+    color: #6840b0;
+}
+
+/* Tailwind - Teal */
+.tailwind {
+    background: linear-gradient(140deg, #d4f7f2, #edfffc);
+}
+
+.tailwind .logo i {
+    color: #0891b2;
+}
+
+.tailwind .tag {
+    color: #087d91;
+}
+
+/* JavaScript - Yellow */
+.javascript {
+    background: linear-gradient(140deg, #fff0b8, #fff9e6);
+}
+
+.javascript .logo i {
+    color: #ad8100;
+}
+
+.javascript .tag {
+    color: #886400;
+}
+
+/* React - Sky Blue */
+.react {
+    background: linear-gradient(140deg, #d9f3ff, #eefaff);
+}
+
+.react .logo i {
+    color: #087eaf;
+}
+
+.react .tag {
+    color: #086b95;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+    .header {
+        width: 92%;
+        margin-bottom: 40px;
+        padding: 20px;
+    }
+
+    .container,
+    main {
+        width: 92%;
+    }
+
+    .tech-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 580px) {
+    .header {
+        width: 92%;
+        margin-top: 15px;
+        margin-bottom: 35px;
+        padding: 17px;
+    }
+
+    .header .logo {
+        font-size: 21px;
+    }
+
+    .heading {
+        margin-bottom: 30px;
+    }
+
+    .heading h1 {
+        font-size: 31px;
+        letter-spacing: -1px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .tech-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .tech-card {
+        min-height: 310px;
+        padding: 23px;
+    }
+
+    .logo {
+        width: 76px;
+        height: 76px;
+        margin: 22px 0 18px;
+    }
+
+    .logo i {
+        font-size: 42px;
+    }
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.tech-card:focus-visible,
+.header .logo:focus-visible {
+    outline: 3px solid #5140c8;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

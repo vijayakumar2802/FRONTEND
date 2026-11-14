@@ -1,34 +1,36 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom"
 
-const NavBar = () => {
-
-
- const [shwoDatas,setShowiDatas] = useState(null)
-
- useEffect(()=>{
-
-   const datas = JSON.parse(localStorage.getItem("isActive"))
-
-   setShowiDatas(datas)
-    
-
- },[])
-
+const DashBoard = ({ shwoDatas }) => {
   return (
-    <>
-    <div className='bg-amber-300 p-3 flex justify-between items-center'>
-        <div>
-            Logo
-        </div>
-        <div className='flex gap-10'>
-            <Link to={"/register"}>Register</Link>
-            <Link to={"/login"}>Login</Link>
-            <Link to={"/"}>{shwoDatas==null?"Home":shwoDatas.userName}</Link>
-        </div>
-    </div>
-    </>
+    <nav className="bg-amber-500 px-6 md:px-12 py-6 flex justify-between items-center shadow-md">
+      {/* Logo / Brand */}
+      <div className="text-3xl font-extrabold text-white tracking-wide cursor-pointer hover:opacity-90 transition-opacity">
+        Logo
+      </div>
+
+      {/* Navigation Links */}
+      <div className="flex items-center gap-6 md:gap-10 text-base md:text-lg font-semibold text-white">
+        <Link 
+          to="/register" 
+          className="hover:text-amber-100 transition-colors"
+        >
+          Register
+        </Link>
+        <Link 
+          to="/login" 
+          className="hover:text-amber-100 transition-colors"
+        >
+          Login
+        </Link>
+        <Link 
+          to="/" 
+          className="bg-amber-600 px-4 py-2 rounded-lg hover:bg-amber-700 transition-colors shadow-sm"
+        >
+          {shwoDatas == null ? "Home" : shwoDatas.userName}
+        </Link>
+      </div>
+    </nav>
   )
 }
 
-export default NavBar
+export default DashBoard
